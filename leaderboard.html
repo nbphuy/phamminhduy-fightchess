@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chess Club – Bảng xếp hạng</title>
-  <link rel="stylesheet" href="theme.css"/>
-  <link rel="stylesheet" href="leaderboard.css"/>
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="leaderboard.css" />
 </head>
+
 <body>
   <nav class="navbar">
     <div class="brand">♔ Chess<span>Club</span></div>
@@ -21,7 +23,7 @@
       <span class="nav-elo" id="navElo">ELO 500</span>
       <div class="nav-avatar" id="navAv">??</div>
       <span class="nav-name" id="navName">…</span>
-      <a href="login.html" class="nav-logout" onclick="DB.clearSession()">Thoát</a>
+      <a href="index.html" class="nav-logout" onclick="DB.clearSession()">Thoát</a>
     </div>
   </nav>
 
@@ -31,7 +33,7 @@
         <h1>Bảng xếp hạng</h1>
         <p class="lb-sub">Dựa trên tài khoản thật · cập nhật mỗi 5 giây</p>
       </div>
-      <input type="text" class="room-search" placeholder="🔍 Tìm người chơi…" oninput="filterLB(this.value)"/>
+      <input type="text" class="room-search" placeholder="🔍 Tìm người chơi…" oninput="filterLB(this.value)" />
     </div>
 
     <!-- Podium -->
@@ -60,4 +62,5 @@
   <script src="core.js"></script>
   <script src="leaderboard.js"></script>
 </body>
+
 </html>

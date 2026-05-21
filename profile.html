@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chess Club – Hồ sơ</title>
-  <link rel="stylesheet" href="theme.css"/>
-  <link rel="stylesheet" href="profile.css"/>
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="profile.css" />
 </head>
+
 <body>
   <nav class="navbar">
     <div class="brand">♔ Chess<span>Club</span></div>
@@ -21,7 +23,7 @@
       <span class="nav-elo" id="navElo">ELO 500</span>
       <div class="nav-avatar" id="navAv">??</div>
       <span class="nav-name" id="navName">…</span>
-      <a href="login.html" class="nav-logout" onclick="DB.clearSession()">Thoát</a>
+      <a href="index.html" class="nav-logout" onclick="DB.clearSession()">Thoát</a>
     </div>
   </nav>
 
@@ -65,10 +67,16 @@
       <div id="ptab-history" class="ptab-content card">
         <div class="ptab-title">Lịch sử trận đấu gần đây</div>
         <table class="g-table">
-          <thead><tr>
-            <th>Kết quả</th><th>Đối thủ</th><th>ELO ĐT</th>
-            <th>Thời gian</th><th>Thay đổi ELO</th><th>Ngày</th>
-          </tr></thead>
+          <thead>
+            <tr>
+              <th>Kết quả</th>
+              <th>Đối thủ</th>
+              <th>ELO ĐT</th>
+              <th>Thời gian</th>
+              <th>Thay đổi ELO</th>
+              <th>Ngày</th>
+            </tr>
+          </thead>
           <tbody id="histBody"></tbody>
         </table>
       </div>
@@ -79,11 +87,11 @@
         <div class="settings-grid">
           <div class="field">
             <label>Họ và tên</label>
-            <input id="s-name" type="text"/>
+            <input id="s-name" type="text" />
           </div>
           <div class="field">
             <label>Email</label>
-            <input id="s-email" type="email"/>
+            <input id="s-email" type="email" />
           </div>
           <div class="field">
             <label>Quốc gia</label>
@@ -105,11 +113,11 @@
         <div class="settings-grid">
           <div class="field">
             <label>Mật khẩu hiện tại</label>
-            <input id="s-pwold" type="password" placeholder="••••••••"/>
+            <input id="s-pwold" type="password" placeholder="••••••••" />
           </div>
           <div class="field">
             <label>Mật khẩu mới</label>
-            <input id="s-pwnew" type="password" placeholder="••••••••"/>
+            <input id="s-pwnew" type="password" placeholder="••••••••" />
           </div>
         </div>
 
@@ -124,4 +132,5 @@
   <script src="core.js"></script>
   <script src="profile.js"></script>
 </body>
+
 </html>

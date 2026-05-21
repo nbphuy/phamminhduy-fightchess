@@ -13,7 +13,7 @@ const DB = {
 
   register(username, email, password, fullname) {
     const users = this.getUsers();
-    const key   = username.toLowerCase();
+    const key = username.toLowerCase();
     if (users[key]) return { ok: false, msg: 'Tên đăng nhập đã tồn tại' };
     const emailLower = email.toLowerCase();
     if (Object.values(users).some(u => u.email === emailLower))
@@ -29,7 +29,7 @@ const DB = {
       joinDate: new Date().toLocaleDateString('vi-VN'),
       status: 'online',
       lastSeen: Date.now(),
-      initials: username.slice(0,2).toUpperCase(),
+      initials: username.slice(0, 2).toUpperCase(),
     };
     this.saveUsers(users);
     return { ok: true };
@@ -50,7 +50,7 @@ const DB = {
 
   updateUser(username, fields) {
     const users = this.getUsers();
-    const key   = username.toLowerCase();
+    const key = username.toLowerCase();
     if (!users[key]) return false;
     Object.assign(users[key], fields);
     this.saveUsers(users);
@@ -59,7 +59,7 @@ const DB = {
 
   updateElo(username, delta) {
     const users = this.getUsers();
-    const key   = username.toLowerCase();
+    const key = username.toLowerCase();
     if (!users[key]) return;
     users[key].elo = Math.max(100, (users[key].elo || 500) + delta);
     users[key].eloHistory = users[key].eloHistory || [];
@@ -73,7 +73,7 @@ const DB = {
   // ── COINS ──
   addCoins(username, amount) {
     const users = this.getUsers();
-    const key   = username.toLowerCase();
+    const key = username.toLowerCase();
     if (!users[key]) return;
     users[key].coins = Math.max(0, (users[key].coins || 0) + amount);
     this.saveUsers(users);
@@ -86,13 +86,13 @@ const DB = {
 
   // ── SESSION ──
   setSession(username) { sessionStorage.setItem('cc_session', username.toLowerCase()); },
-  getSession()         { return sessionStorage.getItem('cc_session'); },
-  clearSession()       { sessionStorage.removeItem('cc_session'); },
+  getSession() { return sessionStorage.getItem('cc_session'); },
+  clearSession() { sessionStorage.removeItem('cc_session'); },
 
   // ── LEADERBOARD ──
   getLeaderboard() {
     const users = this.getUsers();
-    const now   = Date.now();
+    const now = Date.now();
     return Object.values(users)
       .map(u => {
         // online = lastSeen within 90 seconds
@@ -134,7 +134,7 @@ const DB = {
       const hist = JSON.parse(localStorage.getItem(key) || '[]');
       hist.unshift(entry);
       localStorage.setItem(key, JSON.stringify(hist.slice(0, 50)));
-    } catch {}
+    } catch { }
   },
   getMatchHistory(username) {
     try { return JSON.parse(localStorage.getItem('cc_hist_' + username.toLowerCase()) || '[]'); }
@@ -146,7 +146,7 @@ const DB = {
 function requireAuth() {
   const s = DB.getSession();
   if (!s || !DB.getUser(s)) {
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
     return null;
   }
   return DB.getUser(s);

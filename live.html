@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chess Club – Live</title>
-  <link rel="stylesheet" href="theme.css"/>
-  <link rel="stylesheet" href="live.css"/>
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="live.css" />
 </head>
+
 <body>
   <nav class="navbar">
     <div class="brand">♔ Chess<span>Club</span></div>
@@ -21,7 +23,7 @@
       <span class="nav-elo" id="navElo">ELO 500</span>
       <div class="nav-avatar" id="navAv">??</div>
       <span class="nav-name" id="navName">…</span>
-      <a href="login.html" class="nav-logout" onclick="DB.clearSession()">Thoát</a>
+      <a href="index.html" class="nav-logout" onclick="DB.clearSession()">Thoát</a>
     </div>
   </nav>
 
@@ -90,7 +92,7 @@
             </div>
 
             <div class="bet-input-row">
-              <input type="number" id="betAmount" min="1" placeholder="Số xu đặt" oninput="validateBet()"/>
+              <input type="number" id="betAmount" min="1" placeholder="Số xu đặt" oninput="validateBet()" />
               <span class="bet-win-preview" id="betPreview"></span>
             </div>
 
@@ -125,4 +127,5 @@
   <script src="core.js"></script>
   <script src="live.js"></script>
 </body>
+
 </html>

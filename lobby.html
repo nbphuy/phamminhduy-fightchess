@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chess Club – Lobby</title>
-  <link rel="stylesheet" href="theme.css"/>
-  <link rel="stylesheet" href="lobby.css"/>
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="lobby.css" />
 </head>
+
 <body>
   <nav class="navbar">
     <div class="brand">♔ Chess<span>Club</span></div>
@@ -21,7 +23,7 @@
       <span class="nav-elo" id="navElo">ELO 500</span>
       <div class="nav-avatar" id="navAv">??</div>
       <span class="nav-name" id="navName">Loading…</span>
-      <a href="login.html" class="nav-logout" onclick="DB.clearSession()">Thoát</a>
+      <a href="index.html" class="nav-logout" onclick="DB.clearSession()">Thoát</a>
     </div>
   </nav>
 
@@ -45,7 +47,7 @@
         <div class="side-title">🏠 Tạo phòng</div>
         <div class="field">
           <label>Tên phòng</label>
-          <input id="rName" type="text" placeholder="Phòng của tôi"/>
+          <input id="rName" type="text" placeholder="Phòng của tôi" />
         </div>
         <div class="field">
           <label>Thời gian</label>
@@ -58,7 +60,7 @@
         </div>
         <div class="field">
           <label>Mật khẩu (tuỳ chọn)</label>
-          <input id="rPw" type="password" placeholder="Để trống = public"/>
+          <input id="rPw" type="password" placeholder="Để trống = public" />
         </div>
         <button class="btn btn-secondary btn-full" onclick="createRoom()">Tạo phòng</button>
       </div>
@@ -68,7 +70,7 @@
     <section class="lobby-content">
       <div class="room-header">
         <h2>Danh sách phòng <span class="badge badge-gray" id="roomCount">0 phòng</span></h2>
-        <input type="text" class="room-search" placeholder="🔍 Tìm phòng…" oninput="filterRooms(this.value)"/>
+        <input type="text" class="room-search" placeholder="🔍 Tìm phòng…" oninput="filterRooms(this.value)" />
       </div>
       <div class="card" style="padding:0;overflow:hidden">
         <table class="g-table">
@@ -104,7 +106,8 @@
       <div class="modal-title">🔒 Phòng có mật khẩu</div>
       <div class="field" style="text-align:left;margin-bottom:16px">
         <label>Nhập mật khẩu</label>
-        <input id="joinPwInput" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')confirmJoin()"/>
+        <input id="joinPwInput" type="password" placeholder="••••••••"
+          onkeydown="if(event.key==='Enter')confirmJoin()" />
       </div>
       <div class="auth-msg err" id="pwMsg" style="margin-bottom:12px"></div>
       <div style="display:flex;gap:8px">
@@ -117,4 +120,5 @@
   <script src="core.js"></script>
   <script src="lobby.js"></script>
 </body>
+
 </html>
