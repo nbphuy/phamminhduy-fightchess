@@ -1,0 +1,67 @@
+.lobby-main {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+  max-width: 1120px;
+  margin: 24px auto;
+  padding: 0 20px;
+  align-items: start;
+}
+.lobby-side { display: flex; flex-direction: column; gap: 16px; }
+.side-title { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; }
+
+.time-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-bottom: 12px; }
+.time-btn {
+  padding: 8px 4px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface2); color: var(--text-muted);
+  font-size: 0.8rem; font-weight: 600; cursor: pointer;
+  transition: all 0.15s;
+}
+.time-btn:hover { border-color: var(--accent); color: var(--text); }
+.time-btn.active { background: var(--accent); color: var(--white); border-color: var(--accent); }
+
+.lobby-content { display: flex; flex-direction: column; gap: 14px; }
+.room-header {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.room-header h2 { font-size: 0.95rem; font-weight: 700; color: var(--white); display: flex; align-items: center; gap: 8px; }
+.room-search {
+  padding: 8px 12px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); color: var(--text); font-size: 0.87rem;
+  outline: none; width: 200px; transition: border-color 0.2s;
+}
+.room-search:focus { border-color: var(--accent); }
+.room-search::placeholder { color: var(--text-dim); }
+
+/* Room rows */
+.lock-icon { color: var(--text-dim); font-size: 0.78rem; margin-left: 4px; }
+.host-av {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--accent); color: var(--white);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; font-weight: 700; margin-right: 6px;
+  vertical-align: middle;
+}
+
+.btn-join {
+  padding: 5px 14px; border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
+  background: transparent; color: var(--accent);
+  font-size: 0.8rem; font-weight: 700; cursor: pointer;
+  transition: all 0.15s; white-space: nowrap;
+}
+.btn-join:hover:not(:disabled) { background: var(--accent); color: var(--white); }
+.btn-join:disabled { border-color: var(--border); color: var(--text-dim); cursor: not-allowed; }
+
+.bot-row td { color: var(--text-muted); }
+.bot-row .btn-join { border-color: var(--green); color: var(--green); }
+.bot-row .btn-join:hover { background: var(--green); color: #000; }
+
+/* Find modal */
+.find-spinner {
+  font-size: 3rem; display: block; margin-bottom: 16px;
+  animation: spin 1.2s linear infinite;
+}
+@keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+.find-sub { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px; }

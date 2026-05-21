@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chess Club – Live</title>
+  <link rel="stylesheet" href="theme.css"/>
+  <link rel="stylesheet" href="live.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">♔ Chess<span>Club</span></div>
+    <div class="nav-links">
+      <a href="lobby.html">Lobby</a>
+      <a href="live.html" class="active">🔴 Live</a>
+      <a href="leaderboard.html">Bảng xếp hạng</a>
+      <a href="profile.html">Hồ sơ</a>
+    </div>
+    <div class="nav-user">
+      <span class="nav-coin" id="navCoin">🪙 0</span>
+      <span class="nav-elo" id="navElo">ELO 500</span>
+      <div class="nav-avatar" id="navAv">??</div>
+      <span class="nav-name" id="navName">…</span>
+      <a href="login.html" class="nav-logout" onclick="DB.clearSession()">Thoát</a>
+    </div>
+  </nav>
+
+  <main class="live-main">
+    <div class="live-header">
+      <h1>🔴 Live Arena</h1>
+      <p class="live-sub">5 phòng bot đang thi đấu · Đặt cược để nhân đôi xu</p>
+    </div>
+
+    <!-- Room grid -->
+    <div class="rooms-grid" id="roomsGrid"></div>
+  </main>
+
+  <!-- WATCH MODAL -->
+  <div class="overlay" id="watchOverlay">
+    <div class="watch-modal">
+      <div class="watch-header">
+        <div class="watch-title" id="watchTitle">Phòng 1</div>
+        <button class="watch-close" onclick="closeWatch()">✕</button>
+      </div>
+
+      <div class="watch-body">
+        <!-- Board -->
+        <div class="watch-left">
+          <!-- Opponent bot -->
+          <div class="watch-bar" id="wBotBar">
+            <div class="watch-av bot-av" id="wBotAv">🤖</div>
+            <div class="watch-info">
+              <div class="watch-name" id="wBotName">Bot B</div>
+              <div class="watch-elo" id="wBotElo">ELO 1200</div>
+            </div>
+            <div class="watch-cap" id="wCapTop"></div>
+            <div class="watch-clock" id="wClockTop">05:00</div>
+          </div>
+
+          <div class="watch-board" id="watchBoard"></div>
+
+          <!-- White bot -->
+          <div class="watch-bar" id="wWhiteBar">
+            <div class="watch-av" id="wWhiteAv">🤖</div>
+            <div class="watch-info">
+              <div class="watch-name" id="wWhiteName">Bot A</div>
+              <div class="watch-elo" id="wWhiteElo">ELO 1100</div>
+            </div>
+            <div class="watch-cap" id="wCapBot"></div>
+            <div class="watch-clock active" id="wClockBot">05:00</div>
+          </div>
+        </div>
+
+        <!-- Side panel -->
+        <div class="watch-right">
+          <!-- Bet panel -->
+          <div class="bet-panel" id="betPanel">
+            <div class="bet-title">🪙 Đặt cược</div>
+            <div class="bet-balance">Số dư: <strong id="betBalance">0</strong> xu</div>
+
+            <div class="bet-bots">
+              <button class="bet-bot active" id="betBtnA" onclick="selectBet('A')">
+                <span id="betNameA">Bot A</span>
+                <span class="bet-odds">×2</span>
+              </button>
+              <button class="bet-bot" id="betBtnB" onclick="selectBet('B')">
+                <span id="betNameB">Bot B</span>
+                <span class="bet-odds">×2</span>
+              </button>
+            </div>
+
+            <div class="bet-input-row">
+              <input type="number" id="betAmount" min="1" placeholder="Số xu đặt" oninput="validateBet()"/>
+              <span class="bet-win-preview" id="betPreview"></span>
+            </div>
+
+            <div class="bet-presets">
+              <button onclick="setBet(10)">10</button>
+              <button onclick="setBet(25)">25</button>
+              <button onclick="setBet(50)">50</button>
+              <button onclick="setBet(100)">100</button>
+              <button onclick="setBetMax()">Max</button>
+            </div>
+
+            <button class="btn btn-primary btn-full" id="betConfirmBtn" onclick="confirmBet()">Đặt cược</button>
+            <div class="bet-result" id="betResult"></div>
+          </div>
+
+          <!-- Move history -->
+          <div class="watch-moves">
+            <div class="side-label">Nước đi</div>
+            <div class="move-list" id="watchMoves"><span class="move-empty">—</span></div>
+          </div>
+
+          <!-- Chat -->
+          <div class="watch-chat">
+            <div class="side-label">Bình luận</div>
+            <div class="chat-msgs" id="watchChat"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="core.js"></script>
+  <script src="live.js"></script>
+</body>
+</html>

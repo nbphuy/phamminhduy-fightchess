@@ -1,0 +1,114 @@
+.auth-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 20px;
+}
+.auth-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.auth-logo {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+.auth-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.auth-sub {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+
+.auth-tabs {
+  display: flex;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+  gap: 3px;
+  margin-bottom: 24px;
+}
+.auth-tab {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.auth-tab.active {
+  background: var(--surface3);
+  color: var(--white);
+}
+.auth-tab:hover:not(.active) {
+  color: var(--text);
+}
+
+.auth-pane {
+  display: none;
+  text-align: left;
+}
+.auth-pane.active {
+  display: block;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.auth-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0 16px;
+  font-size: 0.82rem;
+}
+.auth-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.auth-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.auth-msg {
+  font-size: 0.82rem;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  min-height: 28px;
+}
+.auth-msg.err {
+  background: rgba(237, 66, 69, 0.15);
+  color: var(--red);
+}
+.auth-msg.ok {
+  background: rgba(87, 242, 135, 0.15);
+  color: var(--green);
+}

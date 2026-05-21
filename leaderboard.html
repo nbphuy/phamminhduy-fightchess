@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chess Club – Bảng xếp hạng</title>
+  <link rel="stylesheet" href="theme.css"/>
+  <link rel="stylesheet" href="leaderboard.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">♔ Chess<span>Club</span></div>
+    <div class="nav-links">
+      <a href="lobby.html">Lobby</a>
+      <a href="live.html">🔴 Live</a>
+      <a href="leaderboard.html" class="active">Bảng xếp hạng</a>
+      <a href="profile.html">Hồ sơ</a>
+    </div>
+    <div class="nav-user">
+      <span class="nav-coin" id="navCoin">🪙 0</span>
+      <span class="nav-elo" id="navElo">ELO 500</span>
+      <div class="nav-avatar" id="navAv">??</div>
+      <span class="nav-name" id="navName">…</span>
+      <a href="login.html" class="nav-logout" onclick="DB.clearSession()">Thoát</a>
+    </div>
+  </nav>
+
+  <main class="lb-main">
+    <div class="lb-header">
+      <div>
+        <h1>Bảng xếp hạng</h1>
+        <p class="lb-sub">Dựa trên tài khoản thật · cập nhật mỗi 5 giây</p>
+      </div>
+      <input type="text" class="room-search" placeholder="🔍 Tìm người chơi…" oninput="filterLB(this.value)"/>
+    </div>
+
+    <!-- Podium -->
+    <div class="podium" id="podium"></div>
+
+    <!-- Table -->
+    <div class="card" style="padding:0;overflow:hidden">
+      <table class="g-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Người chơi</th>
+            <th>ELO</th>
+            <th>Thắng</th>
+            <th>Thua</th>
+            <th>Hoà</th>
+            <th>Tỉ lệ thắng</th>
+            <th>Trạng thái</th>
+          </tr>
+        </thead>
+        <tbody id="lbBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="core.js"></script>
+  <script src="leaderboard.js"></script>
+</body>
+</html>
