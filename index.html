@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chess Club – Đăng nhập</title>
-    <link rel="stylesheet" href="theme.css" />
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="./theme.css" />
+    <link rel="stylesheet" href="./login.css" />
 </head>
 
 <body>
@@ -71,11 +71,11 @@
         </div>
     </div>
 
-    <script src="core.js"></script>
+    <script src="./core.js"></script>
     <script>
         // Redirect if already logged in
         if (DB.getSession() && DB.getUser(DB.getSession())) {
-            window.location.href = 'lobby.html';
+            window.location.href = './lobby.html';
         }
 
         function switchTab(name, el) {
@@ -99,7 +99,7 @@
             if (!res.ok) return setMsg('l-msg', res.msg, false);
             DB.setSession(res.user.username);
             setMsg('l-msg', '✓ Đăng nhập thành công!', true);
-            setTimeout(() => window.location.href = 'lobby.html', 600);
+            setTimeout(() => window.location.href = './lobby.html', 600);
         }
 
         function doRegister() {
@@ -116,7 +116,7 @@
             if (!res.ok) return setMsg('r-msg', res.msg, false);
             DB.setSession(user);
             setMsg('r-msg', '✓ Tạo tài khoản thành công!', true);
-            setTimeout(() => window.location.href = 'lobby.html', 600);
+            setTimeout(() => window.location.href = './lobby.html', 600);
         }
     </script>
 </body>

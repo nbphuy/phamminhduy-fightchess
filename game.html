@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chess Club – Chơi</title>
-  <link rel="stylesheet" href="theme.css"/>
-  <link rel="stylesheet" href="game.css"/>
+  <link rel="stylesheet" href="./theme.css" />
+  <link rel="stylesheet" href="./game.css" />
 </head>
+
 <body>
   <nav class="navbar">
     <div class="brand">♔ Chess<span>Club</span></div>
@@ -60,7 +62,7 @@
         <div class="chat-sys">Trận đấu bắt đầu. Chúc may mắn! ♟</div>
       </div>
       <div class="chat-row">
-        <input type="text" id="chatIn" placeholder="Nhắn tin…" onkeydown="if(event.key==='Enter')sendChat()"/>
+        <input type="text" id="chatIn" placeholder="Nhắn tin…" onkeydown="if(event.key==='Enter')sendChat()" />
         <button onclick="sendChat()">Gửi</button>
       </div>
     </div>
@@ -86,13 +88,14 @@
       <div class="result-sub" id="resSub"></div>
       <div class="result-elo" id="resElo"></div>
       <div style="display:flex;gap:10px;justify-content:center;margin-top:20px">
-        <button class="btn btn-primary" onclick="window.location.href='lobby.html'">Về Lobby</button>
+        <button class="btn btn-primary" onclick="window.location.href='./lobby.html'">Về Lobby</button>
         <button class="btn btn-secondary" onclick="location.reload()">Chơi lại</button>
       </div>
     </div>
   </div>
 
-  <script src="core.js"></script>
-  <script src="game.js"></script>
+  <script src="./core.js"></script>
+  <script src="./game.js"></script>
 </body>
+
 </html>

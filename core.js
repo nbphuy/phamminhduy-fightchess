@@ -146,7 +146,7 @@ const DB = {
 function requireAuth() {
   const s = DB.getSession();
   if (!s || !DB.getUser(s)) {
-    window.location.href = 'index.html';
+    window.location.href = './index.html';
     return null;
   }
   return DB.getUser(s);
